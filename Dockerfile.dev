@@ -1,0 +1,20 @@
+# image node
+FROM node:18
+
+# set working diractory
+WORKDIR /app
+
+# copy package.json in working diractory
+COPY package.json .
+
+# install node module
+RUN yarn install
+
+# copy React project in working diractory
+COPY . .
+
+# open port
+EXPOSE 5173
+
+# start front-end server
+CMD ["yarn", "dev"]

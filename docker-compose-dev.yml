@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  wisdom-frontend:
+    container_name: wisdom-frontend-development
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:5173"
+    volumes:
+      - ./src:/app/src:ro
+    env_file:
+      - ./.env.local
