@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "bracketpaircolordlw.bracket-pair-color-dlw",
+    "pranaygp.vscode-css-peek",
+    "ms-azuretools.vscode-docker",
+    "usernamehw.errorlens",
+    "dbaeumer.vscode-eslint"
+  ]
+}
