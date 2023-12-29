@@ -25,3 +25,7 @@ dist-ssr
 
 # Yarn
 yarn.lock
+
+
+# Ignore .env files
+.env.*
