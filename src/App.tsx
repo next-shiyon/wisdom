@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import LoginPage from "./pages/LoginPage";
 import HabitCreatePage from "./pages/habit/HabitCreatePage";
@@ -6,21 +6,16 @@ import HistoryPage from "./pages/history/HistoryPage";
 import HistoryCreatePage from "./pages/history/HistoryCreatePage";
 import Layout from "./components/Layout";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      { path: "/", element: <MainPage /> },
-      { path: "/login", element: <LoginPage /> },
-      { path: "/main", element: <MainPage /> },
-      { path: "/habit/create", element: <HabitCreatePage /> },
-      { path: "/history", element: <HistoryPage /> },
-      { path: "/history/create", element: <HistoryCreatePage /> },
-    ],
-  },
-]);
-
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/habit/create" element={<HabitCreatePage />} />
+        <Route path="/history" element={<HistoryPage />} />
+        <Route path="/history/create" element={<HistoryCreatePage />} />
+      </Route>
+    </Routes>
+  );
 }
