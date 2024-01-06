@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import Header from "../../components/Header";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, MemoryRouter } from "react-router-dom";
+import App from "../../App";
 
-describe("Heading UI", () => {
+describe("Header menu UI", () => {
   test("renders header menu", () => {
     render(
       <BrowserRouter>
@@ -12,5 +13,33 @@ describe("Heading UI", () => {
 
     expect(screen.getByText("main")).toBeInTheDocument();
     expect(screen.getByText("history")).toBeInTheDocument();
+  });
+});
+
+describe("Check the operation of the Header menu", () => {
+  test("Should redirects Main page", () => {
+    render(
+      <MemoryRouter initialEntries={["/"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("link", { name: "main" })).toHaveAttribute(
+      "href",
+      "/"
+    );
+  });
+
+  test("Should redirects History page", () => {
+    render(
+      <MemoryRouter initialEntries={["/"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole("link", { name: "history" })).toHaveAttribute(
+      "href",
+      "/history"
+    );
   });
 });

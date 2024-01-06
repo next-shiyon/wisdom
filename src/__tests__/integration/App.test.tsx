@@ -52,4 +52,14 @@ describe("Application page routing", () => {
 
     expect(screen.getByText(/LoginPage/i)).toBeInTheDocument();
   });
+
+  test("Should routes 404 not found page", async () => {
+    render(
+      <MemoryRouter initialEntries={["/something/wrong/url"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(screen.getByText(/404 not found/i)).toBeInTheDocument();
+  });
 });

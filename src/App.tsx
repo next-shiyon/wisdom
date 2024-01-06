@@ -15,6 +15,7 @@ export default function App() {
         <Route path="/habit/create" element={<HabitCreatePage />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/history/create" element={<HistoryCreatePage />} />
+        <Route path="*" element={<div>404 not found</div>} />
       </Route>
     </Routes>
   );
