@@ -22,6 +22,9 @@ dist-ssr
 *.sln
 *.sw?
 
+# Jest
+coverage/
+
 # Yarn
 yarn.lock
 
