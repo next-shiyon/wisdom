@@ -6,6 +6,7 @@
     "pranaygp.vscode-css-peek",
     "ms-azuretools.vscode-docker",
     "usernamehw.errorlens",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "steoates.autoimport"
   ]
 }
