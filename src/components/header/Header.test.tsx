@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import Header from "./Header";
 import { BrowserRouter, MemoryRouter } from "react-router-dom";
-import App from "../App";
+import App from "../../App";
 
 describe("Header menu UI", () => {
   test("renders header menu", () => {

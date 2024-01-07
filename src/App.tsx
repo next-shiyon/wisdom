@@ -4,7 +4,7 @@ import Login from "./pages/Login";
 import HabitCreate from "./pages/habit/HabitCreate";
 import History from "./pages/history/History";
 import HistoryCreate from "./pages/history/HistoryCreate";
-import Layout from "./components/Layout";
+import Layout from "./components/layout/Layout";
 
 export default function App() {
   return (
