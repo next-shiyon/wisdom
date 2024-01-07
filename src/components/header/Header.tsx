@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { IoMdLogIn } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   const menuList = [
-    { name: "main", link: "/" },
-    { name: "history", link: "/history" },
+    { name: 'main', link: '/' },
+    { name: 'history', link: '/history' },
   ];
 
   return (
@@ -15,6 +16,9 @@ export default function Header() {
           </li>
         ))}
       </ul>
+      <Link to="/login" data-testid="login-icon">
+        <IoMdLogIn />
+      </Link>
     </header>
   );
 }
