@@ -10,7 +10,7 @@ describe("Application page routing", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/MainPage/i)).toBeInTheDocument();
+    expect(screen.getByText(/Main/i)).toBeInTheDocument();
   });
 
   test("Should routes History page", async () => {
@@ -20,7 +20,7 @@ describe("Application page routing", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/HistoryPage/i)).toBeInTheDocument();
+    expect(screen.getByText(/History/i)).toBeInTheDocument();
   });
 
   test("Should routes History Create page", async () => {
@@ -30,7 +30,7 @@ describe("Application page routing", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/HistoryCreatePage/i)).toBeInTheDocument();
+    expect(screen.getByText(/HistoryCreate/i)).toBeInTheDocument();
   });
 
   test("Should routes Habit Create page", async () => {
@@ -40,7 +40,7 @@ describe("Application page routing", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/HabitCreatePage/i)).toBeInTheDocument();
+    expect(screen.getByText(/HabitCreate/i)).toBeInTheDocument();
   });
 
   test("Should routes Login page", async () => {
@@ -50,7 +50,7 @@ describe("Application page routing", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/LoginPage/i)).toBeInTheDocument();
+    expect(screen.getByText(/Login/i)).toBeInTheDocument();
   });
 
   test("Should routes 404 not found page", async () => {
