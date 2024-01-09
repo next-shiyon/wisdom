@@ -10,7 +10,9 @@ export default function Header() {
 
   return (
     <HeaderContainer>
-      <Link to="/">Wisdom</Link>
+      <Link to="/">
+        <h2>Wisdom</h2>
+      </Link>
       <StyledNavigation>
         {navigation.map((menu, index) => (
           <li key={index}>
