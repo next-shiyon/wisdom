@@ -10,6 +10,8 @@ export const GlobalStyles = createGlobalStyle`
 
 html {
   font-size: 100%;
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 body {

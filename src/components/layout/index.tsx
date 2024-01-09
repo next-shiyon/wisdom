@@ -1,13 +1,17 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../header';
-import { GlobalStyles } from '../../styles/globals/Global';
+import { GlobalStyles } from '../../styles/Global.styled';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../../styles/theme';
 
 export default function Layout() {
   return (
     <>
-      <GlobalStyles />
-      <Header />
-      <Outlet />
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Header />
+        <Outlet />
+      </ThemeProvider>
     </>
   );
 }

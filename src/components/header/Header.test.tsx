@@ -1,14 +1,13 @@
 import { render, screen } from '@testing-library/react';
-import Header from '.';
-import { BrowserRouter, MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import App from '../../App';
 
 describe('Header menu UI', () => {
   test('renders header menu', () => {
     render(
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
+      <MemoryRouter initialEntries={['/']}>
+        <App />
+      </MemoryRouter>
     );
 
     expect(screen.getByText('main')).toBeInTheDocument();

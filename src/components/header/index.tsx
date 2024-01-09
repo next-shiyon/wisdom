@@ -1,7 +1,6 @@
 import { IoMdLogIn } from 'react-icons/io';
 import { Link } from 'react-router-dom';
-import { HeaderContainer } from './styles/HeaderContainer';
-import { Navigation } from './styles/Navigation';
+import { HeaderContainer, StyledNavigation } from '../../styles/Header.styled';
 
 export default function Header() {
   const navigation = [
@@ -12,7 +11,7 @@ export default function Header() {
   return (
     <HeaderContainer>
       <Link to="/">Wisdom</Link>
-      <Navigation>
+      <StyledNavigation>
         {navigation.map((menu, index) => (
           <li key={index}>
             <Link to={menu.link}>{menu.name}</Link>
@@ -23,7 +22,7 @@ export default function Header() {
             <IoMdLogIn />
           </Link>
         </li>
-      </Navigation>
+      </StyledNavigation>
     </HeaderContainer>
   );
 }
