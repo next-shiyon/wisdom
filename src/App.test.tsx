@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import App from "../../App";
+import App from "./App";
 
 describe("Application page routing", () => {
   test("Should routes Main page", async () => {
@@ -10,7 +10,7 @@ describe("Application page routing", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/Main/i)).toBeInTheDocument();
+    expect(screen.getByText("Main")).toBeInTheDocument();
   });
 
   test("Should routes History page", async () => {
@@ -20,7 +20,7 @@ describe("Application page routing", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/History/i)).toBeInTheDocument();
+    expect(screen.getByText("History")).toBeInTheDocument();
   });
 
   test("Should routes History Create page", async () => {
@@ -30,7 +30,7 @@ describe("Application page routing", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/HistoryCreate/i)).toBeInTheDocument();
+    expect(screen.getByText("HistoryCreate")).toBeInTheDocument();
   });
 
   test("Should routes Habit Create page", async () => {
@@ -40,7 +40,7 @@ describe("Application page routing", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/HabitCreate/i)).toBeInTheDocument();
+    expect(screen.getByText("HabitCreate")).toBeInTheDocument();
   });
 
   test("Should routes Login page", async () => {
@@ -50,7 +50,7 @@ describe("Application page routing", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/Login/i)).toBeInTheDocument();
+    expect(screen.getByText("Login")).toBeInTheDocument();
   });
 
   test("Should routes 404 not found page", async () => {
@@ -60,6 +60,6 @@ describe("Application page routing", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/404 not found/i)).toBeInTheDocument();
+    expect(screen.getByText("404 not found")).toBeInTheDocument();
   });
 });
