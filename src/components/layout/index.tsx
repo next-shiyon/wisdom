@@ -3,6 +3,7 @@ import Header from '../header';
 import { GlobalStyles } from '../../styles/Global.styled';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../../styles/theme';
+import { MainContainer } from '../../styles/MainContainer.styled';
 
 export default function Layout() {
   return (
@@ -10,7 +11,9 @@ export default function Layout() {
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Header />
-        <Outlet />
+        <MainContainer>
+          <Outlet />
+        </MainContainer>
       </ThemeProvider>
     </>
   );
