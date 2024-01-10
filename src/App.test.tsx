@@ -1,65 +1,65 @@
-import { render, screen } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import App from "./App";
+import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import App from './App';
 
-describe("Application page routing", () => {
-  test("Should routes Main page", async () => {
+describe('Application page routing', () => {
+  test('Should routes Main page', async () => {
     render(
-      <MemoryRouter initialEntries={["/"]}>
+      <MemoryRouter initialEntries={['/']}>
         <App />
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Main")).toBeInTheDocument();
+    expect(screen.getByText('Main')).toBeInTheDocument();
   });
 
-  test("Should routes History page", async () => {
+  test('Should routes History page', async () => {
     render(
-      <MemoryRouter initialEntries={["/history"]}>
+      <MemoryRouter initialEntries={['/history']}>
         <App />
       </MemoryRouter>
     );
 
-    expect(screen.getByText("History")).toBeInTheDocument();
+    expect(screen.getByText('History')).toBeInTheDocument();
   });
 
-  test("Should routes History Create page", async () => {
+  test('Should routes History Create page', async () => {
     render(
-      <MemoryRouter initialEntries={["/history/create"]}>
+      <MemoryRouter initialEntries={['/history/create']}>
         <App />
       </MemoryRouter>
     );
 
-    expect(screen.getByText("HistoryCreate")).toBeInTheDocument();
+    expect(screen.getByText('HistoryCreate')).toBeInTheDocument();
   });
 
-  test("Should routes Habit Create page", async () => {
+  test('Should routes Habit Create page', async () => {
     render(
-      <MemoryRouter initialEntries={["/habit/create"]}>
+      <MemoryRouter initialEntries={['/habit/create']}>
         <App />
       </MemoryRouter>
     );
 
-    expect(screen.getByText("HabitCreate")).toBeInTheDocument();
+    expect(screen.getByText('새로운 습관을 추가하기')).toBeInTheDocument();
   });
 
-  test("Should routes Login page", async () => {
+  test('Should routes Login page', async () => {
     render(
-      <MemoryRouter initialEntries={["/login"]}>
+      <MemoryRouter initialEntries={['/login']}>
         <App />
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Login")).toBeInTheDocument();
+    expect(screen.getByText('Login')).toBeInTheDocument();
   });
 
-  test("Should routes 404 not found page", async () => {
+  test('Should routes 404 not found page', async () => {
     render(
-      <MemoryRouter initialEntries={["/something/wrong/url"]}>
+      <MemoryRouter initialEntries={['/something/wrong/url']}>
         <App />
       </MemoryRouter>
     );
 
-    expect(screen.getByText("404 not found")).toBeInTheDocument();
+    expect(screen.getByText('404 not found')).toBeInTheDocument();
   });
 });
