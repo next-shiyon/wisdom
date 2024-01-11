@@ -20,7 +20,7 @@ const InputContainer = styled.div`
   }
 `;
 
-type InputProps = {
+export type InputProps = {
   type: string;
   label: string;
 };
@@ -28,8 +28,8 @@ type InputProps = {
 export const Input = ({ type, label }: InputProps) => {
   return (
     <InputContainer>
-      <label>{label}</label>
-      <input type={type} />
+      <label data-testid="input-label">{label}</label>
+      <input data-testid="input" type={type} />
     </InputContainer>
   );
 };

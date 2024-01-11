@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const MainContainer = styled.main`
-  height: 100%;
-  margin-top: 5%;
+  height: 100vh;
+  padding-top: 48px;
+  background-color: hsl(0, 0%, 98%);
 `;

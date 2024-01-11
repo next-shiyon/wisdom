@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Input } from './Input';
+import { Input } from './shared/Input';
 
 const PeriodBoxContainer = styled.div`
   display: flex;

@@ -1,5 +1,5 @@
 import Button from '../components/shared/Button';
-import PageInfo from '../components/shared/PageInfo';
+import PageInfo from '../components/PageInfo';
 import { Input } from '../components/shared/Input';
 
 import {
@@ -8,7 +8,7 @@ import {
   InputContainer,
 } from '../styles/components/HabitCreateForm.styled';
 import { Select } from '../components/shared/Select';
-import PeriodBox from '../components/shared/PeriodBox';
+import PeriodBox from '../components/PeriodBox';
 
 export default function HabitCreate() {
   return (
