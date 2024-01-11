@@ -2,7 +2,7 @@ import {
   StyledDesc,
   StyledTitle,
   TitleContainer,
-} from '../../../styles/PageInfo.styled';
+} from '../../styles/components/PageInfo.styled';
 
 export type PageInfoProps = {
   title: string;

@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import Main from './pages/Main';
 import Login from './pages/Login';
-import HabitCreate from './pages/habit/HabitCreate';
-import History from './pages/history/History';
-import HistoryCreate from './pages/history/HistoryCreate';
+import HabitCreate from './pages/HabitCreate';
+import History from './pages/History';
+import HistoryCreate from './pages/HistoryCreate';
 
 type RoutesType = {
   path: string;

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import PageInfo, { PageInfoProps } from './PageInfo';
+import PageInfo, { PageInfoProps } from '../../components/shared/PageInfo';
 
 describe('PageInfo', () => {
   test('should render data from props', () => {

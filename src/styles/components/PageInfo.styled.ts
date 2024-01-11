@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const TitleContainer = styled.div`
-  padding: 32px;
+  margin-bottom: 32px;
 `;
 
 export const StyledTitle = styled.h2`

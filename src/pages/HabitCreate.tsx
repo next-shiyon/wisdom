@@ -1,9 +1,9 @@
-import Button from '../../components/shared/Button/Button';
-import PageInfo from '../../components/shared/PageInfo/PageInfo';
-import { Flex } from '../../styles/Flex.styled';
-import { HabitCreateContainer } from '../../styles/HabitCreate.styled';
-import { Input } from '../../styles/Input.styled';
-import { Select } from '../../styles/Select.styled';
+import Button from '../components/shared/Button';
+import PageInfo from '../components/shared/PageInfo';
+import { Flex } from '../styles/Flex.styled';
+import { HabitCreateContainer } from '../styles/components/HabitCreate.styled';
+import { Input } from '../styles/Input.styled';
+import { Select } from '../styles/Select.styled';
 
 export default function HabitCreate() {
   return (

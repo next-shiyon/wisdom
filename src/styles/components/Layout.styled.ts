@@ -6,5 +6,4 @@ export const MainContainer = styled.main<{ $width?: string }>`
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #000;
 `;
