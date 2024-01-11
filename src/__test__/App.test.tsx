@@ -40,7 +40,7 @@ describe('Application page routing', () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText('새로운 습관을 추가하기')).toBeInTheDocument();
+    expect(screen.getByText(/Create a new habit/i)).toBeInTheDocument();
   });
 
   test('Should routes Login page', async () => {
