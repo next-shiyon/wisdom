@@ -12,11 +12,15 @@ const PeriodBoxContainer = styled.div`
   }
 `;
 
-export default function PeriodBox() {
+type PeriodBoxProps = {
+  name: string;
+};
+
+export default function PeriodBox({ name }: PeriodBoxProps) {
   return (
     <PeriodBoxContainer>
-      <Input type="date" label="Period" />
-      <Input type="date" label="" />
+      <Input type="date" label="Period" name={`${name}From`} />
+      <Input type="date" label="" name={`${name}To`} />
     </PeriodBoxContainer>
   );
 }
