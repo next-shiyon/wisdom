@@ -1,23 +1,23 @@
 import { ReactNode } from 'react';
-import { FormProvider, SubmitHandler, UseFormReturn } from 'react-hook-form';
-import { HabitCreateFormType } from '../../types/HabitCreateFormType';
-import { createHabit } from '../../api/habit';
+import {
+  FieldValues,
+  FormProvider,
+  SubmitHandler,
+  UseFormReturn,
+} from 'react-hook-form';
 
-type FormProps = {
+type FormProps<TFieldValues extends FieldValues> = {
   children: ReactNode;
-  formConditions: UseFormReturn<HabitCreateFormType>;
+  formConditions: UseFormReturn<TFieldValues>;
+  onSubmit: (data: TFieldValues) => SubmitHandler<TFieldValues> | void;
 };
 
-export default function Form({ children, formConditions }: FormProps) {
+export default function Form<TFieldValues extends FieldValues>({
+  children,
+  formConditions,
+  onSubmit,
+}: FormProps<TFieldValues>) {
   const { handleSubmit } = formConditions;
-
-  const onSubmit: SubmitHandler<HabitCreateFormType> = (data) => {
-    if (createHabit(data)) {
-      window.alert('success');
-    } else {
-      window.alert('fail');
-    }
-  };
 
   return (
     <FormProvider {...formConditions}>

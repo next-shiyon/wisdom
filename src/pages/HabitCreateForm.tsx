@@ -17,6 +17,7 @@ import {
   HabitCreateFormType,
   HabitCreateFormValidateSchema,
 } from '../types/HabitCreateFormType';
+import { createHabit } from '../api/habit';
 
 export default function HabitCreate() {
   const formConditions = useForm<HabitCreateFormType>({
@@ -26,13 +27,18 @@ export default function HabitCreate() {
     resolver: yupResolver(HabitCreateFormValidateSchema),
   });
 
+  const onSubmit = (data: HabitCreateFormType) => {
+    createHabit(data);
+  };
+
+  // TODO: submit 중일 때는 loading 되는 UI 표시하기
   return (
     <HabitCreateContainer>
       <PageInfo
         title="Create a new habit ✨"
         description="The created habit can be modified at any time!"
       />
-      <Form formConditions={formConditions}>
+      <Form formConditions={formConditions} onSubmit={onSubmit}>
         <InputContainer>
           <Input type="text" label="Habit name" name="habitName" />
           <PeriodBox name="period" />
