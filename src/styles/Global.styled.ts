@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 html {
-  font-size: 100%;
+  font-size: 16px;
   font-family: 'Noto Sans', sans-serif;
   font-family: 'Noto Sans JP', sans-serif;
 }
@@ -20,7 +20,6 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  font-size: 1rem;
   line-height: 1;
 }
 

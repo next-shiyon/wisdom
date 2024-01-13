@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import Main from './pages/Main';
-import Login from './pages/Login';
-import HabitCreate from './pages/habit/HabitCreate';
-import History from './pages/history/History';
-import HistoryCreate from './pages/history/HistoryCreate';
+import LoginForm from './pages/LoginForm';
+import HabitCreateForm from './pages/HabitCreateForm';
+import HistoryList from './pages/HistoryList';
+import HistoryCreateForm from './pages/HistoryCreateForm';
 
 type RoutesType = {
   path: string;
@@ -17,19 +17,19 @@ export const routes: RoutesType[] = [
   },
   {
     path: '/login',
-    element: <Login />,
+    element: <LoginForm />,
   },
   {
     path: '/habit/create',
-    element: <HabitCreate />,
+    element: <HabitCreateForm />,
   },
   {
     path: '/history',
-    element: <History />,
+    element: <HistoryList />,
   },
   {
     path: '/history/create',
-    element: <HistoryCreate />,
+    element: <HistoryCreateForm />,
   },
   {
     path: '*',

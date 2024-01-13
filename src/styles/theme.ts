@@ -5,4 +5,5 @@ export const theme = {
   backGroundColor: {
     header: '#166191',
   },
+  themeColor: '#166191',
 };

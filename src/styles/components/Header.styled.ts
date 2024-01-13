@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
+  position: sticky;
+  top: -16px;
+  width: 100%;
+  height: 72px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 48px;
+  padding: 12px 24px 0;
   background-color: ${({ theme }) => theme.backGroundColor.header};
 
   & a {
@@ -18,10 +22,11 @@ export const StyledNavigation = styled.ul`
   align-items: center;
   gap: 24px;
   text-transform: capitalize;
+  font-weight: 600;
 
-  svg {
+  & svg {
     display: block;
-    width: 1.15rem;
-    height: 1.15rem;
+    width: 1.45rem;
+    height: 1.45rem;
   }
 `;

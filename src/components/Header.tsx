@@ -1,6 +1,9 @@
 import { IoMdLogIn } from 'react-icons/io';
 import { Link } from 'react-router-dom';
-import { HeaderContainer, StyledNavigation } from '../../styles/Header.styled';
+import {
+  HeaderContainer,
+  StyledNavigation,
+} from '../styles/components/Header.styled';
 
 export default function Header() {
   const navigation = [
