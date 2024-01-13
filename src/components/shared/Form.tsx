@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { FormProvider, SubmitHandler, UseFormReturn } from 'react-hook-form';
 import { HabitCreateFormType } from '../../types/HabitCreateFormType';
+import { createHabit } from '../../api/habit';
 
 type FormProps = {
   children: ReactNode;
@@ -10,9 +11,13 @@ type FormProps = {
 export default function Form({ children, formConditions }: FormProps) {
   const { handleSubmit } = formConditions;
 
-  // TODO: create submit API
-  const onSubmit: SubmitHandler<HabitCreateFormType> = (data) =>
-    console.log(data);
+  const onSubmit: SubmitHandler<HabitCreateFormType> = (data) => {
+    if (createHabit(data)) {
+      window.alert('success');
+    } else {
+      window.alert('fail');
+    }
+  };
 
   return (
     <FormProvider {...formConditions}>
