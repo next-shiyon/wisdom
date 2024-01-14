@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const HabitCreateContainer = styled.div`
   max-width: 564px;
   padding: 32px;
+  margin-top: 64px;
   margin-left: auto;
   margin-right: auto;
 `;
