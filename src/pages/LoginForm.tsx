@@ -4,8 +4,17 @@ import Button from '../components/shared/Button';
 import { LoginFormContainer } from '../styles/components/LoginForm.styled';
 import googleLogo from '../assets/images/google-logo.png';
 import { Flex } from '../styles/Flex.styled';
+import { useNavigate } from 'react-router-dom';
+import { onAuthStateChanged } from 'firebase/auth';
+import { firebaseAuth } from '../api/utils';
 
 export default function LoginForm() {
+  const navigate = useNavigate();
+
+  onAuthStateChanged(firebaseAuth, (user) => {
+    if (user) navigate('/main');
+  });
+
   return (
     <LoginFormContainer>
       <PageInfo

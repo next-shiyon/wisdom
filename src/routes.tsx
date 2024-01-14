@@ -10,7 +10,7 @@ type RoutesType = {
   element: ReactNode;
 };
 
-export const routes: RoutesType[] = [
+export const privateRoutes: RoutesType[] = [
   {
     path: '/',
     element: <Main />,
@@ -30,6 +30,17 @@ export const routes: RoutesType[] = [
   {
     path: '/history/create',
     element: <HistoryCreateForm />,
+  },
+  {
+    path: '*',
+    element: <div>404 not found</div>,
+  },
+];
+
+export const publicRoutes: RoutesType[] = [
+  {
+    path: '/login',
+    element: <LoginForm />,
   },
   {
     path: '*',
