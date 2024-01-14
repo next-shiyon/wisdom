@@ -12,7 +12,7 @@ export default function LoginForm() {
   const navigate = useNavigate();
 
   onAuthStateChanged(firebaseAuth, (user) => {
-    if (user) navigate('/main');
+    if (user) navigate('/');
   });
 
   return (

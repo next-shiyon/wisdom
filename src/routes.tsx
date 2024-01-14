@@ -39,7 +39,7 @@ export const privateRoutes: RoutesType[] = [
 
 export const publicRoutes: RoutesType[] = [
   {
-    path: '/login',
+    path: '/',
     element: <LoginForm />,
   },
   {
