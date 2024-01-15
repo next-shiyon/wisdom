@@ -1,4 +1,4 @@
-import { IoMdLogIn, IoMdLogOut } from 'react-icons/io';
+import { IoMdLogOut } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import {
   HeaderContainer,
