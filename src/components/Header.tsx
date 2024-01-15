@@ -1,5 +1,5 @@
 import { IoMdLogOut } from 'react-icons/io';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   HeaderContainer,
   StyledNavigation,
