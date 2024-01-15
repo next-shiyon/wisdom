@@ -18,6 +18,8 @@ import {
   HabitCreateFormValidateSchema,
 } from '../types/HabitCreateFormType';
 import { createHabit } from '../api/habit';
+import { firebaseAuth } from '../api/utils';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function HabitCreate() {
   const formConditions = useForm<HabitCreateFormType>({
@@ -28,15 +30,21 @@ export default function HabitCreate() {
   });
 
   const onSubmit = (data: HabitCreateFormType) => {
-    createHabit(data);
+    if (!firebaseAuth.currentUser) return;
+
+    createHabit({
+      ...data,
+      habitId: uuidv4(),
+      userId: firebaseAuth.currentUser.uid,
+    });
   };
 
   // TODO: submit 중일 때는 loading 되는 UI 표시하기
   return (
     <HabitCreateContainer>
       <PageInfo
-        title="Create a new habit ✨"
-        description="The created habit can be modified at any time!"
+        title="새롭게 습관을 생성해보세요✨"
+        description="생성된 습관은 언제든지 수정할 수 있습니다!"
       />
       <Form formConditions={formConditions} onSubmit={onSubmit}>
         <InputContainer>

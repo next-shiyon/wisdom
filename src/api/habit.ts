@@ -3,8 +3,10 @@ import { HabitCreateFormType } from '../types/HabitCreateFormType';
 import { firebaseDB } from './utils';
 
 export const createHabit = (habitCreateForm: HabitCreateFormType) => {
+  const url = `${habitCreateForm.userId}/habit/${habitCreateForm.habitId}`;
+
   try {
-    set(ref(firebaseDB, 'habit/' + habitCreateForm.habitName), {
+    set(ref(firebaseDB, url), {
       ...habitCreateForm,
     });
   } catch (error) {

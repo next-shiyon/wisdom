@@ -16,7 +16,7 @@ const StyledButton = styled.button<{ variant?: string }>`
 type ButtonProps = {
   children: ReactNode;
   variant?: 'outline';
-  onClick?: () => {};
+  onClick?: () => void;
 };
 
 export default function Button({ children, onClick, variant }: ButtonProps) {
