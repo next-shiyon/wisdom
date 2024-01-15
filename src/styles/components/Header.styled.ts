@@ -15,6 +15,10 @@ export const HeaderContainer = styled.header`
     text-decoration: none;
     color: ${({ theme }) => theme.colors.header};
   }
+
+  .user-profile {
+    border-radius: 50%;
+  }
 `;
 
 export const StyledNavigation = styled.ul`

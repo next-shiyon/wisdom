@@ -20,8 +20,11 @@ import {
 import { createHabit } from '../api/habit';
 import { firebaseAuth } from '../api/utils';
 import { v4 as uuidv4 } from 'uuid';
+import { useNavigate } from 'react-router-dom';
 
 export default function HabitCreate() {
+  const navigate = useNavigate();
+
   const formConditions = useForm<HabitCreateFormType>({
     mode: 'onChange',
     criteriaMode: 'all',
@@ -32,11 +35,19 @@ export default function HabitCreate() {
   const onSubmit = (data: HabitCreateFormType) => {
     if (!firebaseAuth.currentUser) return;
 
-    createHabit({
+    const result = createHabit({
       ...data,
       habitId: uuidv4(),
       userId: firebaseAuth.currentUser.uid,
     });
+
+    if (!result) {
+      window.alert('습관 생성에 실패하였습니다.🥲');
+      return;
+    }
+
+    window.alert('습관 생성에 성공하였습니다.⭐️');
+    navigate('/');
   };
 
   // TODO: submit 중일 때는 loading 되는 UI 표시하기
@@ -62,7 +73,14 @@ export default function HabitCreate() {
           </Select>
         </InputContainer>
         <ButtonWrapper>
-          <Button variant="outline">Previous</Button>
+          <Button
+            variant="outline"
+            onClick={() => {
+              navigate('/');
+            }}
+          >
+            Previous
+          </Button>
           <Button>Create Habit</Button>
         </ButtonWrapper>
       </Form>

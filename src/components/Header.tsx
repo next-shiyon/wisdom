@@ -34,7 +34,12 @@ export default function Header() {
           </li>
         ))}
         <li>
-          <img src={user.photoURL} width="24" height="24" />
+          <img
+            className="user-profile"
+            src={user.photoURL}
+            width="28px"
+            height="28px"
+          />
         </li>
         <li>
           <Link
