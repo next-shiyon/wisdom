@@ -15,6 +15,7 @@ export const LabelContainer = styled.div<{ $hasError?: boolean }>`
 
   > input,
   select {
+    padding-left: 12px;
     box-shadow: 0px 6px 13px -3px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     border: ${({ $hasError }) =>

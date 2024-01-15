@@ -24,14 +24,7 @@ export default function Header() {
   };
 
   const loginStatus = () => {
-    if (!user)
-      return (
-        <li>
-          <Link to="/login" data-testid="login-icon">
-            <IoMdLogIn />
-          </Link>
-        </li>
-      );
+    if (!user) return;
 
     return (
       <>
@@ -59,7 +52,7 @@ export default function Header() {
   return (
     <HeaderContainer>
       <Link to="/">
-        <h2>Wisdom</h2>
+        <h2>Wisdom💫</h2>
       </Link>
       <StyledNavigation>{loginStatus()}</StyledNavigation>
     </HeaderContainer>
