@@ -11,6 +11,7 @@ import { firebaseAuth } from '../api/utils';
 export default function LoginForm() {
   const navigate = useNavigate();
 
+  // TODO: 로그인 유저 정보 전역으로 관리하기
   onAuthStateChanged(firebaseAuth, (user) => {
     if (user) navigate('/');
   });

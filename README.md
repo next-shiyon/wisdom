@@ -2,13 +2,13 @@
 
 ## Page URL
 
-| Page           | URL             | purpose            |
-| -------------- | --------------- | ------------------ |
-| Login          | /login          | Login              |
-| Main           | /main           | Dashboard          |
-| Create habit   | /habit/create   | Create new habit   |
-| History        | /history        | View history list  |
-| Create history | /history/create | create new history |
+| Page           | URL             | purpose            | Completed or not |
+| -------------- | --------------- | ------------------ | ---------------- |
+| Login          | /login          | Login              | ✅               |
+| Main           | /main           | Dashboard          |                  |
+| Create habit   | /habit/create   | Create new habit   | ✅               |
+| History        | /history        | View history list  |                  |
+| Create history | /history/create | create new history |                  |
 
 ## Architecture (Phase 1)
 

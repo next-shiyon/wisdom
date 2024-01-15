@@ -1,5 +1,5 @@
 import { IoMdLogOut } from 'react-icons/io';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   HeaderContainer,
   StyledNavigation,
@@ -9,6 +9,7 @@ import { firebaseAuth } from '../api/utils';
 import { useState } from 'react';
 
 export default function Header() {
+  // TODO: type 명확하게 변경하기
   const [user, setUser] = useState<any>();
 
   const navigation = [
