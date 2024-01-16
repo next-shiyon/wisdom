@@ -21,6 +21,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1;
+  background-color: hsl(0, 0%, 98%);
 }
 
 h1,
