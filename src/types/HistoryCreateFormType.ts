@@ -1,9 +1,21 @@
+import * as yup from 'yup';
+
 export type HistoryCreateFormType = {
-  historyId: string;
   habitId: string;
   userId: string;
   title: string;
-  createDate: Date;
+  content: string;
   deleteFlg: boolean;
-  keyword: string[];
 };
+
+export const HistortCreateFormValidationSchema: yup.ObjectSchema<HistoryCreateFormType> =
+  yup.object().shape({
+    habitId: yup.string().default(''),
+    userId: yup.string().default(''),
+    title: yup
+      .string()
+      .required('Please enter a title field')
+      .max(20, 'Please enter a title within 100 characters'),
+    content: yup.string().required('Please enter the content'),
+    deleteFlg: yup.boolean().default(false),
+  });
