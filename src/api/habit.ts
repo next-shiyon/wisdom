@@ -1,4 +1,4 @@
-import { ref, set } from 'firebase/database';
+import { child, get, onValue, ref, set } from 'firebase/database';
 import { HabitCreateFormType } from '../types/HabitCreateFormType';
 import { firebaseDB } from './utils';
 
@@ -15,4 +15,25 @@ export const createHabit = (habitCreateForm: HabitCreateFormType) => {
   }
 
   return true;
+};
+
+export const getHabit = async (
+  data: Pick<HabitCreateFormType, 'userId' | 'habitId'>
+) => {
+  console.log(data);
+  const url = `${data.userId}/habit/${data.habitId}`;
+  try {
+    const dbRef = ref(firebaseDB);
+    return get(child(dbRef, url)).then((snapshot) => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val());
+        return snapshot.val();
+      } else {
+        return null;
+      }
+    });
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
 };

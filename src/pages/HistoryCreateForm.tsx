@@ -20,15 +20,33 @@ import { useParams } from 'react-router-dom';
 import { createHistory } from '../api/history';
 import Button from '../components/shared/Button';
 import { Textarea } from '../components/shared/Textarea';
+import { useEffect, useState } from 'react';
+import { getHabit } from '../api/habit';
+import { HabitCreateFormType } from '../types/HabitCreateFormType';
 
 export default function HistoryCreate() {
   const { habitId } = useParams();
+  const [habit, setHabit] = useState<HabitCreateFormType | undefined>();
   const formConditions = useForm<HistoryCreateFormType>({
     mode: 'onChange',
     criteriaMode: 'all',
     shouldFocusError: true,
     resolver: yupResolver(HistortCreateFormValidationSchema),
   });
+
+  useEffect(() => {
+    if (!habitId) return;
+    const fetchHabit = async () => {
+      if (!firebaseAuth.currentUser) return;
+      const result = await getHabit({
+        habitId,
+        userId: firebaseAuth.currentUser.uid,
+      });
+      setHabit(result);
+    };
+
+    fetchHabit();
+  }, [firebaseAuth.currentUser]);
 
   const onSubmit = (data: HistoryCreateFormType) => {
     if (!firebaseAuth.currentUser) return;
@@ -42,10 +60,17 @@ export default function HistoryCreate() {
     });
   };
 
+  if (!habit) {
+    return <div>loading..</div>;
+  }
+
   return (
     <HistoryCreateWrapper>
       {/* TODO: DB에서 데이터 연동하기 */}
-      <PageInfo title="습관 1" description="Sat, Dec 17, 2024" />
+      <PageInfo
+        title={habit.habitName}
+        description={new Date().toDateString()}
+      />
       <Form formConditions={formConditions} onSubmit={onSubmit}>
         <InputContainer>
           <Input type="text" label="Title" name="title" />
