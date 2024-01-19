@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import * as yup from 'yup';
 
 export type HistoryCreateFormType = {
@@ -15,8 +16,7 @@ export const HistortCreateFormValidationSchema: yup.ObjectSchema<HistoryCreateFo
     historyId: yup.string().default(''),
     habitId: yup.string().default(''),
     userId: yup.string().default(''),
-    // TODO: date format 변경 (utils)
-    createDate: yup.string().default(new Date().toString()),
+    createDate: yup.string().default(format(new Date(), 'yyyy/MM/dd')),
     title: yup
       .string()
       .required('Please enter a title field')
