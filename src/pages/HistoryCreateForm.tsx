@@ -16,7 +16,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import { firebaseAuth } from '../api/utils';
 
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { createHistory } from '../api/history';
 import Button from '../components/shared/Button';
 import { Textarea } from '../components/shared/Textarea';
@@ -26,6 +26,7 @@ import { HabitCreateFormType } from '../types/HabitCreateFormType';
 
 export default function HistoryCreate() {
   const { habitId } = useParams();
+  const navigate = useNavigate();
   const [habit, setHabit] = useState<HabitCreateFormType | undefined>();
   const formConditions = useForm<HistoryCreateFormType>({
     mode: 'onChange',
@@ -66,7 +67,6 @@ export default function HistoryCreate() {
 
   return (
     <HistoryCreateWrapper>
-      {/* TODO: DB에서 데이터 연동하기 */}
       <PageInfo
         title={habit.habitName}
         description={new Date().toDateString()}
@@ -76,7 +76,16 @@ export default function HistoryCreate() {
           <Input type="text" label="Title" name="title" />
           <Textarea label="Content" name="content" rows={20} />
         </InputContainer>
+        {/* TODO: 이전버튼 눌렀을 때, validation 작동하지 않도록 수정 */}
         <ButtonWrapper>
+          <Button
+            variant="outline"
+            onClick={() => {
+              navigate(-1);
+            }}
+          >
+            Previous
+          </Button>
           <Button>Create History</Button>
         </ButtonWrapper>
       </Form>
