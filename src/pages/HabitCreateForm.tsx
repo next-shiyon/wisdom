@@ -72,11 +72,12 @@ export default function HabitCreate() {
             <option value="7">7</option>
           </Select>
         </InputContainer>
+        {/* TODO: 이전버튼 눌렀을 때, validation 작동하지 않도록 수정 */}
         <ButtonWrapper>
           <Button
             variant="outline"
             onClick={() => {
-              navigate('/');
+              navigate(-1);
             }}
           >
             Previous
