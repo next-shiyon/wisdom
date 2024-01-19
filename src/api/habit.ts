@@ -1,4 +1,4 @@
-import { child, get, onValue, ref, set } from 'firebase/database';
+import { child, get, ref, set } from 'firebase/database';
 import { HabitCreateFormType } from '../types/HabitCreateFormType';
 import { firebaseDB } from './utils';
 
