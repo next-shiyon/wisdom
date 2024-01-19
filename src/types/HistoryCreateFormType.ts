@@ -5,7 +5,7 @@ export type HistoryCreateFormType = {
   habitId: string;
   userId: string;
   title: string;
-  date: Date;
+  createDate: string;
   content: string;
   deleteFlg: boolean;
 };
@@ -15,7 +15,8 @@ export const HistortCreateFormValidationSchema: yup.ObjectSchema<HistoryCreateFo
     historyId: yup.string().default(''),
     habitId: yup.string().default(''),
     userId: yup.string().default(''),
-    date: yup.date().default(new Date()),
+    // TODO: date format 변경 (utils)
+    createDate: yup.string().default(new Date().toString()),
     title: yup
       .string()
       .required('Please enter a title field')
