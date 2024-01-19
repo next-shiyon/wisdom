@@ -8,7 +8,7 @@
 | Main           | /main           | Dashboard          |                  |
 | Create habit   | /habit/create   | Create new habit   | ✅               |
 | History        | /history        | View history list  |                  |
-| Create history | /history/create | create new history |                  |
+| Create history | /history/create | create new history | ✅               |
 
 ## Architecture (Phase 1)
 
