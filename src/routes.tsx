@@ -28,7 +28,7 @@ export const privateRoutes: RoutesType[] = [
     element: <HistoryList />,
   },
   {
-    path: '/history/create',
+    path: '/history/create/:habitId',
     element: <HistoryCreateForm />,
   },
   {

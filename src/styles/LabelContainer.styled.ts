@@ -14,12 +14,18 @@ export const LabelContainer = styled.div<{ $hasError?: boolean }>`
   }
 
   > input,
-  select {
+  select,
+  textarea {
     padding-left: 12px;
     box-shadow: 0px 6px 13px -3px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     border: ${({ $hasError }) =>
       $hasError ? '1px solid red;' : '1px solid hsl(0, 0%, 90%);'};
     height: 40px;
+  }
+
+  > textarea {
+    padding: 12px;
+    height: auto;
   }
 `;
