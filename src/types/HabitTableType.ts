@@ -1,8 +1,8 @@
+import { HabitCreateFormType } from './HabitCreateFormType';
 import { HistoryCreateFormType } from './HistoryCreateFormType';
 
-type HabitLowType = {
-  habitId: string;
-  historyList: Pick<HistoryCreateFormType, 'historyId' | 'createDate'>[];
+type HabitLowType = HabitCreateFormType & {
+  historyList: HistoryCreateFormType[];
 };
 
-export type HabitTableType = HabitLowType[];
+export type HabitListTableType = HabitLowType[];

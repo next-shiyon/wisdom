@@ -35,3 +35,24 @@ export const getHabit = async (
     return false;
   }
 };
+
+// TODO: getHabit 이랑 공통화하기
+export const getHabitList = async ({
+  userId,
+}: Pick<HabitCreateFormType, 'userId'>) => {
+  const url = `${userId}/habit`;
+
+  try {
+    const dbRef = ref(firebaseDB);
+    return get(child(dbRef, url)).then((snapshot) => {
+      if (snapshot.exists()) {
+        return snapshot.val();
+      } else {
+        return null;
+      }
+    });
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};
