@@ -74,12 +74,7 @@ export default function HabitCreate() {
         </InputContainer>
         {/* TODO: 이전버튼 눌렀을 때, validation 작동하지 않도록 수정 */}
         <ButtonWrapper>
-          <Button
-            variant="outline"
-            onClick={() => {
-              navigate(-1);
-            }}
-          >
+          <Button variant="outline" onClick={() => navigate(-1)}>
             Previous
           </Button>
           <Button>Create Habit</Button>

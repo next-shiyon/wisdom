@@ -52,6 +52,7 @@ export default function HistoryCreate() {
   const onSubmit = (data: HistoryCreateFormType) => {
     if (!firebaseAuth.currentUser) return;
     if (!habitId) return;
+    if (!window.confirm('생성하시겠습니까?')) return;
 
     createHistory({
       ...data,
@@ -78,12 +79,7 @@ export default function HistoryCreate() {
         </InputContainer>
         {/* TODO: 이전버튼 눌렀을 때, validation 작동하지 않도록 수정 */}
         <ButtonWrapper>
-          <Button
-            variant="outline"
-            onClick={() => {
-              navigate(-1);
-            }}
-          >
+          <Button variant="outline" onClick={() => navigate(-1)}>
             Previous
           </Button>
           <Button>Create History</Button>

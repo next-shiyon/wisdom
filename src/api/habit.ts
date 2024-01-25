@@ -20,13 +20,11 @@ export const createHabit = (habitCreateForm: HabitCreateFormType) => {
 export const getHabit = async (
   data: Pick<HabitCreateFormType, 'userId' | 'habitId'>
 ) => {
-  console.log(data);
   const url = `${data.userId}/habit/${data.habitId}`;
   try {
     const dbRef = ref(firebaseDB);
     return get(child(dbRef, url)).then((snapshot) => {
       if (snapshot.exists()) {
-        console.log(snapshot.val());
         return snapshot.val();
       } else {
         return null;
